@@ -1,12 +1,14 @@
 const gridElement = document.getElementById('grid');
 const startElement = document.getElementById('play');
 const mainElement = document.getElementById('main-element');
+const scoreValue = document.getElementById('score-value');
 
 startElement.addEventListener('click', function(){
     gridElement.innerHTML = "";
     gridElement.classList.add('grid');
     const bombList = [];
     let score = 0;
+    scoreValue.innerHTML = score;
 
     for (let i = 1; i <= 100; i++){
 
@@ -27,6 +29,7 @@ startElement.addEventListener('click', function(){
             } else {
                 newSquare.classList.toggle('bg-blue');
                 score +=1;
+                scoreValue.innerHTML = score;
             }
         })
 

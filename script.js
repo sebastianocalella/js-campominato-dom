@@ -19,8 +19,15 @@ startElement.addEventListener('click', function(){
 
         
         newSquare.addEventListener('click', function(){
-            newSquare.classList.toggle('bg-blue');
-            console.log(bombList.includes(i));
+            if(bombList.includes(i)){
+                alert("Che peccato hai presato una bomba!");
+                gridElement.innerHTML = "";
+                gridElement.classList.remove('grid');
+                score = 0;
+            } else {
+                newSquare.classList.toggle('bg-blue');
+                score +=1;
+            }
         })
 
         gridElement.appendChild(newSquare);

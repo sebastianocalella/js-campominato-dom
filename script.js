@@ -2,21 +2,24 @@ const gridElement = document.getElementById('grid');
 const startElement = document.getElementById('play');
 const mainElement = document.getElementById('main-element');
 
-const gridElementList = [];
-
-
 startElement.addEventListener('click', function(){
     gridElement.innerHTML = "";
     gridElement.classList.add('grid');
+    const bombList = [];
     for (let i = 1; i <= 100; i++){
         const newSquare = createSquare();
         newSquare.innerHTML = i;
         gridElement.appendChild(newSquare);
-        gridElementList.push(i);
+        bombList.push(i);
     }
+    console.log(bombList);
+    while (bombList.length>16){
+        bombList.splice(Math.floor(Math.random()*bombList.length),1);
+    }
+    console.log(bombList);
 })
 
-console.log(gridElementList);
+
 
 
 //******************************************************************** */

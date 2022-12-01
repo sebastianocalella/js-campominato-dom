@@ -21,7 +21,10 @@ startElement.addEventListener('click', function(){
 
         
         newSquare.addEventListener('click', function(){
-            if(bombList.includes(i)){
+            if (score>=(100 - (bombList.length + 1))){
+                newSquare.classList.add('bg-blue');
+                alert("Complimenti! Hai vinto!!!");
+            }else if(bombList.includes(i)){
                 alert("Che peccato hai presato una bomba!");
                 gridElement.innerHTML = "";
                 gridElement.classList.remove('grid');
@@ -31,6 +34,7 @@ startElement.addEventListener('click', function(){
                 score +=1;
                 scoreValue.innerHTML = score;
             }
+            console.log(score);
         })
 
         gridElement.appendChild(newSquare);

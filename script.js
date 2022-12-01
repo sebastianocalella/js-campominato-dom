@@ -2,7 +2,7 @@ const gridElement = document.getElementById('grid');
 const startElement = document.getElementById('play');
 const mainElement = document.getElementById('main-element');
 
-const bombList = [];
+const gridElementList = [];
 
 
 startElement.addEventListener('click', function(){
@@ -12,12 +12,16 @@ startElement.addEventListener('click', function(){
         const newSquare = createSquare();
         newSquare.innerHTML = i;
         gridElement.appendChild(newSquare);
+        gridElementList.push(i);
     }
 })
+
+console.log(gridElementList);
 
 
 //******************************************************************** */
 
+//functions
 
 //******************************************************************** */
 

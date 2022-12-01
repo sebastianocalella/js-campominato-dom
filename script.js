@@ -5,19 +5,26 @@ const mainElement = document.getElementById('main-element');
 startElement.addEventListener('click', function(){
     gridElement.innerHTML = "";
     gridElement.classList.add('grid');
+    const gridElementList = [];
     const bombList = [];
     for (let i = 1; i <= 100; i++){
         const newSquare = createSquare();
         newSquare.innerHTML = i;
         gridElement.appendChild(newSquare);
-        bombList.push(i);
+        gridElementList.push(newSquare);
+        bombList.push(newSquare);
+        newSquare.classList.add(`square-${i}`);
     }
-    console.log(bombList);
     while (bombList.length>16){
         bombList.splice(Math.floor(Math.random()*bombList.length),1);
     }
+    console.log(gridElementList);
     console.log(bombList);
+    for (let i=0; i<16; i++){
+
+    }
 })
+
 
 
 

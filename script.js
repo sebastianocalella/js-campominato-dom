@@ -6,8 +6,10 @@ startElement.addEventListener('click', function(){
     gridElement.innerHTML = "";
     gridElement.classList.add('grid');
     const bombList = [];
+    let score = 0;
+    let newSquare;
     for (let i = 1; i <= 100; i++){
-        const newSquare = createSquare();
+        newSquare = createSquare();
         newSquare.innerHTML = i;
         gridElement.appendChild(newSquare);
         bombList.push(newSquare);
@@ -16,14 +18,15 @@ startElement.addEventListener('click', function(){
     while (bombList.length>16){
         bombList.splice(Math.floor(Math.random()*100),1);
     }
+    for (let i=0; i< bombList.length; i++){
+        bombList[i].classList.add('bomb');
+    }
+    console.log(newSquare);
     console.log(bombList);
     for (let i=0; i<16; i++){
 
     }
 })
-
-
-
 
 
 //******************************************************************** */

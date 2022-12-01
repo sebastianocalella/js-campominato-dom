@@ -14,7 +14,6 @@ startElement.addEventListener('click', function(){
         newSquare.classList.add(`s-${i}`);
         while (bombList.length>16){
             bombList.splice(Math.floor(Math.random()*bombList.length),1);
-            newSquare.classList.add('bomb')
         }
     }
     console.log(bombList);

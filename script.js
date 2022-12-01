@@ -13,7 +13,7 @@ startElement.addEventListener('click', function(){
     for (let i = 1; i <= 100; i++){
 
         while (bombList.length>15){
-            bombList.splice(Math.floor(Math.random()*bombList.length),1);
+            bombList.splice(Math.floor(getRandomNumber(0,bombList.length)),1);
         }
 
         let newSquare = createSquare();

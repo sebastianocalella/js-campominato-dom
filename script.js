@@ -7,10 +7,13 @@ startElement.addEventListener('click', function(){
     gridElement.classList.add('grid');
     const bombList = [];
     let score = 0;
-    let newSquare;
+
     for (let i = 1; i <= 100; i++){
-        newSquare = createSquare();
+        let newSquare = createSquare();
         newSquare.innerHTML = i;
+        newSquare.addEventListener('click', function(){
+            newSquare.classList.toggle('bg-blue');
+        })
         gridElement.appendChild(newSquare);
         bombList.push(i);
         newSquare.classList.add(`s-${i}`);
@@ -18,6 +21,8 @@ startElement.addEventListener('click', function(){
     while (bombList.length>16){
         bombList.splice(Math.floor(Math.random()*100),1);
     }
+    
+
 
     console.log(bombList);
     for (let i=0; i<16; i++){
@@ -42,9 +47,6 @@ function getRandomNumber(numMin, numMax){
 function createSquare (){
     const DivElement = document.createElement('div');
     DivElement.classList.add('square');
-    DivElement.addEventListener('click', function(){
-        DivElement.classList.toggle('bg-blue');
-    })
     return DivElement;
 }
 

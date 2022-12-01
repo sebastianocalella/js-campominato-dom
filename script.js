@@ -12,9 +12,9 @@ startElement.addEventListener('click', function(){
         gridElement.appendChild(newSquare);
         bombList.push(newSquare);
         newSquare.classList.add(`s-${i}`);
-        while (bombList.length>16){
-            bombList.splice(Math.floor(Math.random()*bombList.length),1);
-        }
+    }
+    while (bombList.length>16){
+        bombList.splice(Math.floor(Math.random()*100),1);
     }
     console.log(bombList);
     for (let i=0; i<16; i++){

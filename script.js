@@ -26,8 +26,8 @@ startElement.addEventListener('click', function(){
                 gridElement.innerHTML = "";
                 gridElement.classList.remove('grid');
                 score = 0;
-            } else {
-                newSquare.classList.toggle('bg-blue');
+            } else if(!newSquare.classList.contains('bg-blue')){
+                newSquare.classList.add('bg-blue');
                 score +=1;
                 scoreValue.innerHTML = score;
             }

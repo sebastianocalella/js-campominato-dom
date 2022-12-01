@@ -2,6 +2,8 @@ const gridElement = document.getElementById('grid');
 const startElement = document.getElementById('play');
 const mainElement = document.getElementById('main-element');
 
+const bombList = [];
+
 
 startElement.addEventListener('click', function(){
     gridElement.innerHTML = "";
@@ -12,6 +14,19 @@ startElement.addEventListener('click', function(){
         gridElement.appendChild(newSquare);
     }
 })
+
+
+//******************************************************************** */
+
+
+//******************************************************************** */
+
+function getRandomNumber(numMin, numMax){
+    if(numMin===numMax){
+        return numMax
+    }
+    return Math.floor(Math.random()*(numMax - numMin + 1) + numMin);
+}
 
 function createSquare (){
     const DivElement = document.createElement('div');

@@ -5,13 +5,11 @@ const mainElement = document.getElementById('main-element');
 startElement.addEventListener('click', function(){
     gridElement.innerHTML = "";
     gridElement.classList.add('grid');
-    const gridElementList = [];
     const bombList = [];
     for (let i = 1; i <= 100; i++){
         const newSquare = createSquare();
         newSquare.innerHTML = i;
         gridElement.appendChild(newSquare);
-        gridElementList.push(newSquare);
         bombList.push(newSquare);
         newSquare.classList.add(`s-${i}`);
         while (bombList.length>16){
@@ -19,7 +17,6 @@ startElement.addEventListener('click', function(){
             newSquare.classList.add('bomb')
         }
     }
-    console.log(gridElementList);
     console.log(bombList);
     for (let i=0; i<16; i++){
 

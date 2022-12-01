@@ -9,17 +9,23 @@ startElement.addEventListener('click', function(){
     let score = 0;
 
     for (let i = 1; i <= 100; i++){
+
+        while (bombList.length>15){
+            bombList.splice(Math.floor(Math.random()*100),1);
+        }
+
         let newSquare = createSquare();
         newSquare.innerHTML = i;
+
+        
         newSquare.addEventListener('click', function(){
             newSquare.classList.toggle('bg-blue');
+            console.log(bombList.includes(i));
         })
+
         gridElement.appendChild(newSquare);
         bombList.push(i);
         newSquare.classList.add(`s-${i}`);
-    }
-    while (bombList.length>16){
-        bombList.splice(Math.floor(Math.random()*100),1);
     }
     
 

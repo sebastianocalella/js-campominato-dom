@@ -12,16 +12,13 @@ startElement.addEventListener('click', function(){
         newSquare = createSquare();
         newSquare.innerHTML = i;
         gridElement.appendChild(newSquare);
-        bombList.push(newSquare);
+        bombList.push(i);
         newSquare.classList.add(`s-${i}`);
     }
     while (bombList.length>16){
         bombList.splice(Math.floor(Math.random()*100),1);
     }
-    for (let i=0; i< bombList.length; i++){
-        bombList[i].classList.add('bomb');
-    }
-    console.log(newSquare);
+
     console.log(bombList);
     for (let i=0; i<16; i++){
 
